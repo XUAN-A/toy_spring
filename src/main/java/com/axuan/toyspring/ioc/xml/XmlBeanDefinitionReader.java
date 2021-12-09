@@ -84,7 +84,7 @@ public class XmlBeanDefinitionReader implements BeanDefinitionReader {
                     }
 
                     BeanReference beanReference = new BeanReference(ref);
-                    beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(ref, beanReference));
+                    beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name, beanReference));
                 }
             }
         }

@@ -24,7 +24,8 @@ public class JdkDynamicAopProxyTest {
         AdvisedSupport advisedSupport = new AdvisedSupport();
         advisedSupport.setMethodInterceptor(new LogInterceptor());
 
-        TargetSource targetSource = new TargetSource(helloService, HelloServiceImpl.class, HelloServiceImpl.class.getInterfaces());
+        TargetSource targetSource = new TargetSource(
+                helloService, HelloServiceImpl.class, HelloServiceImpl.class.getInterfaces());
         advisedSupport.setTargetSource(targetSource);
         advisedSupport.setMethodMatcher((Method method, Class beanClass) -> true);
 

@@ -36,7 +36,8 @@ public class AspectJAwareAdvisorAutoProxyCreator implements BeanPostProcessor, B
         }
 
         // 1. 从BeanFactory 查找 AspectJExpressionPointcutAdvisor 类型的对象
-        List<AspectJExpressionPointcutAdvisor> advisors = xmlBeanFactory.getBeansForType(AspectJExpressionPointcut.class);
+        List<AspectJExpressionPointcutAdvisor> advisors =
+                xmlBeanFactory.getBeansForType(AspectJExpressionPointcutAdvisor.class);
         for (AspectJExpressionPointcutAdvisor advisor : advisors) {
 
             // 2.使用 Pointcut 对象匹配当前 bean对象
